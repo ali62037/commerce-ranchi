@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Results - Commerce Future Point</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Results Page Specific Styles */
+        .results-hero {
+            background: linear-gradient(rgba(0, 32, 78, 0.9), rgba(0, 32, 78, 0.8)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0 60px;
+            text-align: center;
+        }
+        
+        .results-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .results-hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        .results-container {
+            padding: 80px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .results-intro {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 60px;
+        }
+        
+        .results-intro h2 {
+            color: #00204E;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .results-intro p {
+            color: #666;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+        
+        .academic-year-section {
+            margin-bottom: 80px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+        }
+        
+        .year-header {
+            background: linear-gradient(to right, #00204E, #0047AB);
+            color: white;
+            padding: 25px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .year-header h3 {
+            font-size: 1.8rem;
+            margin: 0;
+        }
+        
+        .year-badge {
+            background: #FFD700;
+            color: #00204E;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+        
+        .results-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .results-table thead {
+            background-color: #f0f7ff;
+        }
+        
+        .results-table th {
+            padding: 20px 15px;
+            text-align: left;
+            font-weight: 600;
+            color: #00204E;
+            border-bottom: 2px solid #e0e0e0;
+            font-size: 1.1rem;
+        }
+        
+        .results-table tbody tr {
+            border-bottom: 1px solid #eaeaea;
+            transition: background-color 0.3s;
+        }
+        
+        .results-table tbody tr:hover {
+            background-color: #f9f9f9;
+        }
+        
+        .results-table td {
+            padding: 20px 15px;
+            font-size: 1rem;
+        }
+        
+        .student-name {
+            font-weight: 600;
+            color: #00204E;
+        }
+        
+        .percentage {
+            font-weight: 700;
+            color: #0047AB;
+            font-size: 1.2rem;
+        }
+        
+        .rank-badge {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        
+        .rank-1 {
+            background-color: #FFD700;
+            color: #00204E;
+        }
+        
+        .rank-2 {
+            background-color: #C0C0C0;
+            color: #00204E;
+        }
+        
+        .rank-3 {
+            background-color: #CD7F32;
+            color: white;
+        }
+        
+        .rank-other {
+            background-color: #e0e0e0;
+            color: #555;
+        }
+        
+        .results-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+        
+        .stat-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .stat-icon {
+            font-size: 2.5rem;
+            color: #0047AB;
+            margin-bottom: 20px;
+        }
+        
+        .stat-number {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #00204E;
+            margin-bottom: 10px;
+        }
+        
+        .stat-text {
+            color: #666;
+            font-size: 1.1rem;
+        }
+        
+        .testimonial-section {
+            background: linear-gradient(to right, #00204E, #0047AB);
+            color: white;
+            padding: 80px 0;
+            margin-top: 60px;
+        }
+        
+        .testimonial-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .testimonial-container h2 {
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+        }
+        
+        .testimonial {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+        
+        .testimonial-text {
+            font-size: 1.2rem;
+            font-style: italic;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: #FFD700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #00204E;
+            font-weight: 600;
+            margin-right: 20px;
+        }
+        
+        .author-info h4 {
+            margin: 0 0 5px 0;
+            font-size: 1.2rem;
+        }
+        
+        .author-info p {
+            margin: 0;
+            opacity: 0.8;
+        }
+        
+        @media (max-width: 768px) {
+            .results-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .year-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+            
+            .results-table {
+                display: block;
+                overflow-x: auto;
+            }
+            
+            .results-table th, .results-table td {
+                padding: 15px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <h1><span class="logo-primary">COMMERCE</span> <span class="logo-secondary">FUTURE POINT</span></h1>
+                    <p class="tagline">Education is the most powerful tool to change the life</p>
+                </div>
+                
+                <div class="nav-menu" id="navMenu">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                        <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                        <li class="nav-item"><a href="subjects.html" class="nav-link">Subjects</a></li>
+                        <li class="nav-item"><a href="result.html" class="nav-link active">Our Results</a></li>
+                        <li class="nav-item"><a href="fees.html" class="nav-link">Fee Structure</a></li>
+                        <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
+                        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="hamburger" id="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Results Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Our Academic Excellence</h1>
+            <p>At Commerce Future Point, we take pride in our students' outstanding achievements. Year after year, our students excel in board and university examinations, setting new benchmarks of academic excellence.</p>
+        </div>
+    </section>
+
+    <!-- Results Content -->
+    <section class="results-container">
+        <div class="container">
+            <div class="results-intro">
+                <h2>Consistent Excellence Over the Years</h2>
+                <p>Since 1999, Commerce Future Point has been transforming students' lives through quality education. Our results speak volumes about our commitment to academic excellence and personalized teaching methodologies. Below are the outstanding performances of our students in recent years.</p>
+            </div>
+            
+            <!-- 2023-25 Results -->
+            <div class="academic-year-section animate-card">
+                <div class="year-header">
+                    <h3>Academic Year 2023-25</h3>
+                    <div class="year-badge">Most Recent Batch</div>
+                </div>
+                <div class="table-container">
+                    <table class="results-table">
+                        <thead>
+                            <tr>
+                                <th width="10%">Rank</th>
+                                <th width="40%">Student Name</th>
+                                <th width="25%">Marks Obtained</th>
+                                <th width="25%">Percentage</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="rank-badge rank-1">1st</span></td>
+                                <td class="student-name">Anjali Kumari</td>
+                                <td>450 / 500</td>
+                                <td class="percentage">90.0%</td>
+                            </tr>
+                            <tr>
+                                <td><span class="rank-badge rank-2">2nd</span></td>
+                                <td class="student-name">Aryan Srivastav</td>
+                                <td>425 / 500</td>
+                                <td class="percentage">85.0%</td>
+                            </tr>
+                            <tr>
+                                <td><span class="rank-badge rank-3">3rd</span></td>
+                                <td class="student-name">Ravi Kumar Das</td>
+                                <td>422 / 500</td>
+                                <td class="percentage">84.4%</td>
+                            </tr>
+                            <tr>
+                                <td><span class="rank-badge rank-other">4th</span></td>
+                                <td class="student-name">Mahi Kumari</td>
+                                <td>419 / 500</td>
+                                <td class="percentage">83.8%</td>
+                            </tr>
+                            <tr>
+                                <td><span class="rank-badge rank-other">5th</span></td>
+                                <td class="student-name">Kasak Kumari</td>
+                                <td>410 / 500</td>
+                                <td class="percentage">82.0%</td>
+                            </tr>
+                            <tr>
+                                <td><span class="rank-badge rank-other">6th</span></td>
+                                <td class="student-name">Mahi Kumari</td>
+                                <td>408 / 500</td>
+                                <td class="percentage">81.6%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- 2022-24 Results -->
+            <div class="academic-year-section animate-card">
+                <div class="year-header">
+                    <h3>Academic Year 2022-24</h3>
+                    <div class="year-badge">Exceptional Performance</div>
+                </div>
+                <div class="table-container">
+                    <table class="results-table">
+                        <thead>
+                            <tr>
+                                <th width="10%">Rank</th>
+                                <th width="40%">Student Name</th>
+                                <th width="25%">Marks Obtained</th>
+                                <th width="25%">Percentage</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="rank-badge rank-1">1st</span></td>
+                                <td class="student-name">Ujala Sejal Bhatt</td>
+                                <td>464 / 500</td>
+                                <td class="percentage">92.8%</td>
+                            </tr>
+                            <tr>
+                                <td><span class="rank-badge rank-2">2nd</span></td>
+                                <td class="student-name">Alfiya Jahan</td>
+                                <td>443 / 500</td>
+                                <td class="percentage">88.6%</td>
+                            </tr>
+                            <tr>
+                                <td><span class="rank-badge rank-3">3rd</span></td>
+                                <td class="student-name">Piyush Gayen</td>
+                                <td>442 / 500</td>
+                                <td class="percentage">88.4%</td>
+                            </tr>
+                            <tr>
+                                <td><span class="rank-badge rank-other">4th</span></td>
+                                <td class="student-name">Muskan Parween</td>
+                                <td>441 / 500</td>
+                                <td class="percentage">88.2%</td>
+                            </tr>
+                            <tr>
+                                <td><span class="rank-badge rank-other">5th</span></td>
+                                <td class="student-name">Aryan Sahoo</td>
+                                <td>434 / 500</td>
+                                <td class="percentage">86.8%</td>
+                            </tr>
+                            <tr>
+                                <td><span class="rank-badge rank-other">6th</span></td>
+                                <td class="student-name">Disha Nandi</td>
+                                <td>419 / 500</td>
+                                <td class="percentage">83.8%</td>
+                            </tr>
+                            <tr>
+                                <td><span class="rank-badge rank-other">7th</span></td>
+                                <td class="student-name">Nupur Kerketta</td>
+                                <td>415 / 500</td>
+                                <td class="percentage">83.0%</td>
+                            </tr>
+                            <tr>
+                                <td><span class="rank-badge rank-other">8th</span></td>
+                                <td class="student-name">Shivani Kumari</td>
+                                <td>403 / 500</td>
+                                <td class="percentage">80.6%</td>
+                            </tr>
+                            <tr>
+                                <td><span class="rank-badge rank-other">9th</span></td>
+                                <td class="student-name">Anupama Toppo</td>
+                                <td>401 / 500</td>
+                                <td class="percentage">80.2%</td>
+                            </tr>
+                            <tr>
+                                <td><span class="rank-badge rank-other">10th</span></td>
+                                <td class="student-name">Sumaiya Parween</td>
+                                <td>401 / 500</td>
+                                <td class="percentage">80.2%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- 2020-22 Results -->
+            <div class="academic-year-section animate-card">
+                <div class="year-header">
+                    <h3>Academic Year 2020-22</h3>
+                    <div class="year-badge">Foundation Batch</div>
+                </div>
+                <div class="table-container">
+                    <table class="results-table">
+                        <thead>
+                            <tr>
+                                <th width="10%">Rank</th>
+                                <th width="40%">Student Name</th>
+                                <th width="25%">Marks Obtained</th>
+                                <th width="25%">Percentage</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="rank-badge rank-1">1st</span></td>
+                                <td class="student-name">Anjali Kumari</td>
+                                <td>470 / 500</td>
+                                <td class="percentage">94.0%</td>
+                            </tr>
+                            <tr>
+                                <td><span class="rank-badge rank-2">2nd</span></td>
+                                <td class="student-name">Rakesh Kumar</td>
+                                <td>443 / 500</td>
+                                <td class="percentage">88.6%</td>
+                            </tr>
+                            <tr>
+                                <td><span class="rank-badge rank-3">3rd</span></td>
+                                <td class="student-name">Sheetal Kumari</td>
+                                <td>432 / 500</td>
+                                <td class="percentage">86.4%</td>
+                            </tr>
+                            <tr>
+                                <td><span class="rank-badge rank-other">4th</span></td>
+                                <td class="student-name">Shivani Kumari</td>
+                                <td>415 / 500</td>
+                                <td class="percentage">83.0%</td>
+                            </tr>
+                            <tr>
+                                <td><span class="rank-badge rank-other">5th</span></td>
+                                <td class="student-name">Guddi Kumari</td>
+                                <td>406 / 500</td>
+                                <td class="percentage">81.2%</td>
+                            </tr>
+                            <tr>
+                                <td><span class="rank-badge rank-other">6th</span></td>
+                                <td class="student-name">Niraj Kumar Giri</td>
+                                <td>404 / 500</td>
+                                <td class="percentage">80.8%</td>
+                            </tr>
+                            <tr>
+                                <td><span class="rank-badge rank-other">7th</span></td>
+                                <td class="student-name">Rohit Kumar</td>
+                                <td>401 / 500</td>
+                                <td class="percentage">80.2%</td>
+                            </tr>
+                            <tr>
+                                <td><span class="rank-badge rank-other">8th</span></td>
+                                <td class="student-name">Tanehal Raza</td>
+                                <td>401 / 500</td>
+                                <td class="percentage">80.2%</td>
+                            </tr>
+                            <tr>
+                                <td><span class="rank-badge rank-other">9th</span></td>
+                                <td class="student-name">Payal Kumari</td>
+                                <td>400 / 500</td>
+                                <td class="percentage">80.0%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Statistics Section -->
+            <div class="results-stats">
+                <div class="stat-card animate-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="stat-number">94%</div>
+                    <div class="stat-text">Highest Percentage Achieved</div>
+                </div>
+                
+                <div class="stat-card animate-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-number">25+</div>
+                    <div class="stat-text">Top Rankers in 3 Years</div>
+                </div>
+                
+                <div class="stat-card animate-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="stat-number">80%+</div>
+                    <div class="stat-text">All Students Above 80%</div>
+                </div>
+                
+                <div class="stat-card animate-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div class="stat-number">100%</div>
+                    <div class="stat-text">Passing Rate Consistently</div>
+                </div>
+            </div>
+            
+            <!-- Testimonial Section -->
+            
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <h2><span class="logo-primary">COMMERCE</span> <span class="logo-secondary">FUTURE POINT</span></h2>
+                        <p class="tagline">Education is the most powerful tool to change the life</p>
+                    </div>
+                    <p class="footer-about">Since 1999, we have been shaping futures and building careers through quality education and expert guidance.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="subjects.html">Subjects</a></li>
+                        <li><a href="results.html">Our Results</a></li>
+                        <li><a href="fees.html">Fee Structure</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Contact Info</h3>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> OPP: Aloo Godam, Imli Chowk, Harmu, Ranchi</li>
+                        <li><i class="fas fa-phone"></i> 6206787009</li>
+                        <li><i class="fas fa-envelope"></i> info@commercefuturepoint.com</li>
+                        <li><i class="fas fa-clock"></i> Mon-Sat: 8:00 AM - 8:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Commerce Future Point. All Rights Reserved. | Since 1999</p><br>
+                    Developed with ❤️ by <a href="https://qalamweb.com" target="_blank">Qalamweb Technology</a>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/profile.php?id=100066726870885&locale=ta_IN#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Contact Buttons -->
+    <div class="floating-buttons">
+        <div class="floating-toggle" id="floatingToggle">
+            <i class="fas fa-comments"></i>
+        </div>
+        <div class="floating-buttons-container">
+            <a href="https://wa.me/916206787009" class="floating-button whatsapp" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+                <span>WhatsApp</span>
+            </a>
+            <a href="tel:6206787009" class="floating-button call">
+                <i class="fas fa-phone"></i>
+                <span>Call Now</span>
+            </a>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script>
+
+    </script>
+</body>
+</html>
