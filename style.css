@@ -2027,4 +2027,170 @@ a {
     }
 
 }
+/* Mobile Version Fix - Sirf Mobile Ke Liye */
+@media (max-width: 768px) {
+    /* Container fix */
+    .container {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+        margin: 0 auto !important;
+        overflow-x: hidden !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Body fix */
+    body {
+        overflow-x: hidden !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        position: relative !important;
+    }
+
+    /* HTML fix */
+    html {
+        overflow-x: hidden !important;
+        width: 100% !important;
+    }
+
+    /* Sab elements ke liye */
+    * {
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Navigation fix */
+    .navbar {
+        width: 100% !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    /* Hero section fix */
+    .hero {
+        width: 100% !important;
+        overflow-x: hidden !important;
+    }
+
+    .hero-content {
+        width: 100% !important;
+        margin: 0 !important;
+    }
+
+    .hero-text {
+        width: 100% !important;
+        padding: 0 !important;
+    }
+
+    .hero-title {
+        font-size: 24px !important;
+        word-break: break-word !important;
+    }
+
+    /* Grid fix */
+    .classes-grid,
+    .subjects-grid,
+    .fees-grid,
+    .teachers-grid {
+        width: 100% !important;
+        margin: 0 !important;
+        gap: 15px !important;
+    }
+
+    /* Cards fix */
+    .class-card,
+    .subject-card,
+    .fee-card,
+    .teacher-card {
+        width: 100% !important;
+        margin: 0 !important;
+    }
+
+    /* Tabs fix */
+    .tabs-header {
+        flex-wrap: wrap !important;
+        width: 100% !important;
+    }
+
+    .tab-btn {
+        flex: 1 1 auto !important;
+        min-width: 120px !important;
+    }
+
+    /* Footer fix */
+    .footer {
+        width: 100% !important;
+        overflow-x: hidden !important;
+    }
+
+    .footer-content {
+        width: 100% !important;
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Floating buttons fix */
+    .floating-buttons {
+        left: 10px !important;
+        bottom: 10px !important;
+        z-index: 9999 !important;
+    }
+
+    .floating-toggle {
+        width: 45px !important;
+        height: 45px !important;
+    }
+
+    .floating-button {
+        width: 140px !important;
+    }
+
+    /* Koi bhi element overflow na ho */
+    .page-header,
+    .subjects-section,
+    .cta-section,
+    .contact-section {
+        width: 100% !important;
+        overflow-x: hidden !important;
+    }
+}
+
+/* Chhoti screens ke liye (phones) */
+@media (max-width: 480px) {
+    .container {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+
+    .hero-title {
+        font-size: 20px !important;
+    }
+
+    .section-title {
+        font-size: 22px !important;
+    }
+
+    .btn {
+        width: 100% !important;
+    }
+
+    .tab-btn {
+        min-width: 100px !important;
+        font-size: 12px !important;
+    }
+
+    .floating-button {
+        width: 130px !important;
+        padding: 8px 10px !important;
+    }
+}
+
+/* Landscape mode fix */
+@media (max-width: 768px) and (orientation: landscape) {
+    .container {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+}
 
