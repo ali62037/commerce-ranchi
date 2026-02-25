@@ -9,6 +9,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Simple inline style to ensure tabs work if external CSS not loaded fully */
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+        .tabs-header .tab-btn.active { background: var(--primary-color, #1e3c72); color: #fff; }
+    </style>
 </head>
 <body>
     <!-- Header & Navigation -->
@@ -495,6 +501,123 @@
         </div>
     </section>
 
+    <!-- NEW BBA SECTION ADDED HERE -->
+    <section class="subjects-section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">BBA (All Semesters)</h2>
+                <p class="section-subtitle">Comprehensive Bachelor of Business Administration curriculum</p>
+            </div>
+            
+            <div class="subjects-tabs">
+                <div class="tabs-header">
+                    <button class="tab-btn active" data-tab="bba-sem1">Sem 1-2</button>
+                    <button class="tab-btn" data-tab="bba-sem3">Sem 3-4</button>
+                    <button class="tab-btn" data-tab="bba-sem5">Sem 5-6</button>
+                </div>
+                
+                <!-- BBA Sem 1-2 -->
+                <div class="tab-content active" id="bba-sem1">
+                    <div class="subjects-grid">
+                        <div class="subject-card">
+                            <h3 class="subject-title">Semester 1</h3>
+                            <ul>
+                                <li>Organizational Behaviour - 1</li>
+                                <li>Financial Accounting and Analysis</li>
+                                <li>Micro Economics</li>
+                                <li>Business Organisation</li>
+                                <li>Language Communication</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="subject-card">
+                            <h3 class="subject-title">Semester 2</h3>
+                            <ul>
+                                <li>Organizational Behaviour - 2</li>
+                                <li>Cost and Management Accounting</li>
+                                <li>Business Statistics</li>
+                                <li>Business Management</li>
+                                <li>Environmental Studies</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- BBA Sem 3-4 -->
+                <div class="tab-content" id="bba-sem3">
+                    <div class="subjects-grid">
+                        <div class="subject-card">
+                            <h3 class="subject-title">Semester 3</h3>
+                            <ul>
+                                <li>Principle of Economics</li>
+                                <li>Principle of Marketing</li>
+                                <li>Indian Economy - Sectoral Issues</li>
+                                <li>Monetary Economics</li>
+                                <li>Macro Economics</li>
+                                <li>Elementary Computer Application Software</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="subject-card">
+                            <h3 class="subject-title">Semester 4</h3>
+                            <ul>
+                                <li>Management of Human Resource</li>
+                                <li>Advertising and Sales Promotion</li>
+                                <li>Financial Management</li>
+                                <li>Indian Economy - Performance and Policy</li>
+                                <li>Indian Banking System</li>
+                                <li>Entrepreneurship</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- BBA Sem 5-6 (with electives) -->
+                <div class="tab-content" id="bba-sem5">
+                    <div class="subjects-grid">
+                        <div class="subject-card">
+                            <h3 class="subject-title">Semester 5</h3>
+                            <ul>
+                                <li>Research Methodology</li>
+                                <li>Management of Human Resource - 2</li>
+                                <li><strong>Elective (any one):</strong> 
+                                    <ul style="margin-top:5px; padding-left:15px;">
+                                        <li>(a) Investment Banking and Finance</li>
+                                        <li>(b) Rural Marketing</li>
+                                        <li>(c) Industrial Relations</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Elective (any one):</strong> 
+                                    <ul style="margin-top:5px; padding-left:15px;">
+                                        <li>(a) Forensic Analysis and Fraud Investigation</li>
+                                        <li>(b) Retail Management</li>
+                                        <li>(c) Labour Development in India</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="subject-card">
+                            <h3 class="subject-title">Semester 6</h3>
+                            <ul>
+                                <li>E-Commerce</li>
+                                <li>Operation Research for Management</li>
+                                <li><strong>Elective (any one):</strong> 
+                                    <ul style="margin-top:5px; padding-left:15px;">
+                                        <li>(a) Tax Planning</li>
+                                        <li>(b) International Business Markets</li>
+                                        <li>(c) Legislative Labour Welfare</li>
+                                    </ul>
+                                </li>
+                                <li>Project Work (Finance + HR + Marketing)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="container">
@@ -574,5 +697,35 @@
     </div>
 
     <script src="script.js"></script>
+    <script>
+        // Tab switching functionality (ensures all tabs work)
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    const tabsContainer = this.closest('.subjects-tabs');
+                    if (!tabsContainer) return;
+                    
+                    // Remove active class from all buttons in this container
+                    const parentTabs = tabsContainer.querySelectorAll('.tab-btn');
+                    parentTabs.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    // Hide all tab contents in this container
+                    const tabContents = tabsContainer.querySelectorAll('.tab-content');
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    
+                    // Show the selected tab content
+                    const tabId = this.getAttribute('data-tab');
+                    const selectedContent = document.getElementById(tabId);
+                    if (selectedContent) {
+                        selectedContent.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
