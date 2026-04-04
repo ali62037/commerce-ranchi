@@ -1,309 +1,353 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Commerce Future Point</title>
+    <title>Contact Us - KIDD'S ZONE</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Comic+Neue:wght@400;700&family=Nunito:wght@400;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="icon" type="image/x-icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧸</text></svg>">
+    <style>
+        /* Mobile-friendly Campus Kidd's Zone text */
+        @media (max-width: 480px) {
+            .map-details h3 {
+                font-size: 1.2rem !important;
+                line-height: 1.5;
+            }
+
+            .map-details h3 .kidds-zone-colorful {
+                font-size: 1.4rem !important;
+                display: block;
+                margin-bottom: 5px;
+            }
+
+            .map-details h3 .kidds-zone-colorful span {
+                -webkit-text-stroke: 1px white !important;
+            }
+
+            .contact-info {
+                padding: 40px 0;
+            }
+
+            .map-container {
+                padding: 20px;
+            }
+        }
+    </style>
 </head>
-<!-- contact.html file में head section में नीचे दिया गया CSS add करें -->
-<style>
-    /* CONTACT PAGE MOBILE FIXES ONLY */
-    @media (max-width: 768px) {
-        .contact-section {
-            padding: 40px 0 !important;
-        }
-        
-        .contact-content {
-            flex-direction: column !important;
-            gap: 40px !important;
-        }
-        
-        .contact-info, 
-        .contact-form-container {
-            width: 100% !important;
-            flex: none !important;
-        }
-        
-        .contact-form-container {
-            padding: 25px 20px !important;
-            margin-top: 20px !important;
-        }
-        
-        .contact-item {
-            flex-direction: column !important;
-            align-items: flex-start !important;
-            margin-bottom: 25px !important;
-        }
-        
-        .contact-icon {
-            margin-bottom: 15px !important;
-            margin-right: 0 !important;
-        }
-        
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100% !important;
-            padding: 14px !important;
-            font-size: 16px !important;
-        }
-        
-        .map-container {
-            height: 300px !important;
-            margin-bottom: 30px !important;
-        }
-        
-        .faq-question {
-            padding: 18px 20px !important;
-        }
-        
-        .faq-question h3 {
-            font-size: 16px !important;
-            flex: 1 !important;
-            margin-right: 15px !important;
-        }
-        
-        .cta-buttons {
-            flex-direction: column !important;
-        }
-        
-        .cta-buttons .btn {
-            width: 100% !important;
-            margin-bottom: 10px !important;
-        }
-    }
-    
-    @media (max-width: 480px) {
-        .contact-form-container {
-            padding: 20px 15px !important;
-        }
-        
-        .contact-form-header h3 {
-            font-size: 22px !important;
-        }
-        
-        .faq-question h3 {
-            font-size: 15px !important;
-            line-height: 1.4 !important;
-        }
-    }
-</style>
+
 <body>
+    <!-- Music Toggle -->
+    <div class="music-toggle">
+        <button id="musicBtn" class="music-btn">
+            <i class="fas fa-music"></i>
+        </button>
+    </div>
+
+    <!-- Floating Contact Toggle -->
+    <div class="floating-contact">
+        <div class="contact-icons" id="contactIcons">
+            <a href="tel:+917004706917" class="contact-icon call" title="Call Now">
+                <i class="fas fa-phone"></i>
+            </a>
+            <a href="https://wa.me/917004706917" target="_blank" class="contact-icon whatsapp" title="WhatsApp Chat">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+        <!-- <button class="contact-toggle" id="contactToggle">
+            <i class="fas fa-comment-dots"></i>
+        </button> -->
+    </div>
+
+
+
     <!-- Header & Navigation -->
     <header class="header">
         <div class="container">
+
+            <!-- LOGO + TEXT -->
+            <div class="logo" style="display: flex; align-items: center; gap: 10px;">
+
+                <!-- Logo Image (Left Side) -->
+                <img src="/logo.jpeg" alt="Logo" style="width:50px; height:50px; object-fit:contain;">
+
+                <!-- Existing Text (Same as it is) -->
+                <div>
+                    <h1 style="color: black;">
+                        <span class="kidds-zone-colorful">
+                            <span class="letter-k">K</span><span class="letter-i">I</span><span
+                                class="letter-d1">D</span><span class="letter-d2">D</span><span
+                                class="letter-apo">'</span><span class="letter-s">S</span>
+                            &nbsp;
+                            <span class="letter-z">Z</span><span class="letter-o">O</span><span
+                                class="letter-n">N</span><span class="letter-e">E</span>
+                        </span>
+                    </h1>
+                    <p class="tagline">A Unit of Complete Study</p>
+                </div>
+
+            </div>
+
+            <!-- NAVBAR -->
             <nav class="navbar">
-                <div class="logo">
-                    <h1><span class="logo-primary">COMMERCE</span> <span class="logo-secondary">FUTURE POINT</span></h1>
-                    <p class="tagline">Education is the most powerful tool to change the life</p>
-                </div>
-                
-                <div class="nav-menu" id="navMenu">
-                    <ul class="nav-list">
-                        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                        <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-                        <li class="nav-item"><a href="subjects.html" class="nav-link">Subjects</a></li>
-                        <li class="nav-item"><a href="result.html" class="nav-link">Our Result</a></li>
-                        <li class="nav-item"><a href="fees.html" class="nav-link">Fee Structure</a></li>
-                        <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
-                        <li class="nav-item"><a href="contact.html" class="nav-link active">Contact</a></li>
-                    </ul>
-                </div>
-                
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="index.html" class="nav-link active">🏠 Home</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">📚 About Us</a></li>
+                    <li class="nav-item"><a href="admission.html" class="nav-link">✏️ Admission</a></li>
+                    <li class="nav-item"><a href="payment.html" class="nav-link">💳 Pay Fees</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">📞 Contact</a></li>
+                </ul>
+
                 <div class="hamburger" id="hamburger">
                     <span class="bar"></span>
                     <span class="bar"></span>
                     <span class="bar"></span>
                 </div>
             </nav>
+
         </div>
     </header>
 
-    <!-- Page Header -->
-    <section class="page-header">
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-content">
+            <button class="close-menu" id="closeMenu">&times;</button>
+            <ul class="mobile-nav">
+                <li><a href="index.html" class="mobile-nav-link">🏠 Home</a></li>
+                <li><a href="about.html" class="mobile-nav-link">📚 About Us</a></li>
+                <li><a href="admission.html" class="mobile-nav-link">✏️ Admission</a></li>
+                <li><a href="payment.html" class="mobile-nav-link">💳 Pay Fees</a></li>
+                <li><a href="contact.html" class="mobile-nav-link">📞 Contact</a></li>
+            </ul>
+            <div class="mobile-contact">
+                <a href="tel:+917004706917" class="mobile-call-btn">📞 Call Now</a>
+                <a href="https://wa.me/917004706917" target="_blank" class="mobile-whatsapp-btn">💬 WhatsApp Chat</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Hero -->
+    <section class="page-hero contact-hero">
         <div class="container">
-            <h1 class="page-title">Contact Us</h1>
-            <p class="page-subtitle">Get in touch for admissions, queries, or any information</p>
+            <h1 class="page-title">Contact Us 📞</h1>
+            <p class="page-subtitle">We'd love to hear from you! Get in touch with us.</p>
+            <div class="hero-decoration">
+                <div class="decoration-item">📱</div>
+                <div class="decoration-item">📧</div>
+                <div class="decoration-item">📍</div>
+            </div>
+        </div>
+        <div class="page-bg-elements">
+            <div class="bg-element">💬</div>
+            <div class="bg-element">📨</div>
+            <div class="bg-element">📲</div>
+            <div class="bg-element">🗺️</div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="contact-section">
+    <!-- Contact Info -->
+    <section class="contact-info">
         <div class="container">
-            <div class="contact-content">
-                <div class="contact-info animate-left">
-                    <h2 class="section-title">Get in Touch</h2>
-                    <p class="section-subtitle">We're here to help you with all your educational needs</p>
-                    
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h3>Our Address</h3>
-                                <p>OPP: Aloo Godam, Imli Chowk, Harmu, Ranchi - 834002</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h3>Phone Number</h3>
-                                <p><a href="tel:6206787009">6206787009</a></p>
-                                <p>Monday to Saturday, 8:00 AM to 8:00 PM</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h3>Email Address</h3>
-                                <p><a href="mailto:info@commercefuturepoint.com">info@commercefuturepoint.com</a></p>
-                                <p><a href="mailto:admissions@commercefuturepoint.com">admissions@commercefuturepoint.com</a></p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-clock"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h3>Working Hours</h3>
-                                <p>Monday to Saturday: 8:00 AM - 8:00 PM</p>
-                                <p>Sunday: 10:00 AM - 2:00 PM (for enquiries only)</p>
-                            </div>
-                        </div>
+            <div class="contact-cards">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
                     </div>
-                    
-                    <div class="contact-social">
-                        <h3>Follow Us</h3>
-                        <div class="social-icons">
-                            <a href="https://www.facebook.com/profile.php?id=100066726870885&locale=ta_IN#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                            <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
-                            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
+                    <h3>Our Location</h3>
+                    <p>Gaush Nagar mani tola doranda</p>
+                    <p>Ranchi, Jharkhand 834002</p>
+                    <a href="#map" class="contact-link">View on map →</a>
                 </div>
-                
-    <!-- Map Section -->
-    <section class="map-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Find Us Here</h2>
-                <p class="section-subtitle">Visit our institute for a free demo class or counselling session</p>
-            </div>
-            
-            <div class="map-container">
-                <div class="map-placeholder">
-                    <i class="fas fa-map-marked-alt"></i>
-                    <h3>Google Maps Location</h3>
-                    <p>OPP: Aloo Godam, Imli Chowk, Harmu, Ranchi</p>
-                    <a href="https://maps.google.com/?q=OPP+Aloo+Godam,+Imli+Chowk,+Harmu,+Ranchi" class="btn btn-outline" target="_blank">Open in Google Maps</a>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>Phone Number</h3>
+                    <p>+917004 706917</p>
+                    <p>+9170047 06917</p>
+                    <a href="tel:+917004706917" class="contact-link">Call now →</a>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email Address</h3>
+                    <p>kiddszone31@gmail.com</p>
+                    <p>sajjadkhan99.sk65@gmail.com</p>
+                    <a href="kiddszone31@gmail.com" class="contact-link">Send email →</a>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Working Hours</h3>
+                    <p>Monday - Thursday: 9:00 AM - 1:30 PM</p>
+                    <p>Friday: 9:00 AM - 12:30 PM</p>
+                    <p>Saturday: 9:00 AM - 12:00 PM</p>
+                    <a href="#" class="contact-link">Schedule a visit →</a>
                 </div>
             </div>
-            
-            <div class="location-details">
-                <div class="location-item">
-                    <h3><i class="fas fa-bus"></i> How to Reach</h3>
-                    <p>Easily accessible by public transport. Near Imli Chowk, Harmu. Auto rickshaws and buses available from all parts of Ranchi.</p>
+        </div>
+    </section>
+
+    <!-- Contact Form & Map -->
+    <section class="contact-form-map">
+        <div class="container">
+            <div class="form-map-container">
+                <!-- Contact Form -->
+                <div class="contact-form-container">
+                    <h2>Send us a Message 💌</h2>
+                    <p>Have questions? Fill out the form below and we'll get back to you soon.</p>
+
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                            <div class="form-icon">👤</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                            <div class="form-icon">📱</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                            <div class="form-icon">📧</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="childAge">Child's Age</label>
+                            <select id="childAge" name="childAge">
+                                <option value="">Select age group</option>
+                                <option value="2-3">2-3 years (Pre-Nursery)</option>
+                                <option value="3-4">3-4 years (Nursery)</option>
+                                <option value="4-5">4-5 years (Kindergarten)</option>
+                                <option value="5-6">5-6 years (Class 1)</option>
+                                <option value="6-7">6-7 years (Class 2)</option>
+                                <option value="7-8">7-8 years (Class 3)</option>
+                                <option value="8-9">8-9 years (Class 4)</option>
+                                <option value="9-10">9-10 years (Class 5)</option>
+                            </select>
+                            <div class="form-icon">👶</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="4"
+                                placeholder="Type your message here..."></textarea>
+                            <div class="form-icon">📝</div>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-large">Send Message 📨</button>
+                    </form>
+
+                    <div class="form-success" id="formSuccess">
+                        <div class="success-icon">✅</div>
+                        <h3>Message Sent Successfully!</h3>
+                        <p>Thank you for contacting us. We'll get back to you within 24 hours.</p>
+                    </div>
                 </div>
-                
-                <div class="location-item">
-                    <h3><i class="fas fa-parking"></i> Parking Facility</h3>
-                    <p>Ample parking space available for students and parents.</p>
-                </div>
-                
-                <div class="location-item">
-                    <h3><i class="fas fa-wheelchair"></i> Accessibility</h3>
-                    <p>Wheelchair accessible building with ramps and elevators.</p>
+
+                <!-- Map -->
+                <div class="map-container" id="map">
+                    <h2>Find Us on Map 🗺️</h2>
+                    <p>Visit our campus at the following location:</p>
+
+                    <div class="map-placeholder">
+                        <div class="map-frame">
+                            <div class="map-content">
+                                <div class="map-marker">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="map-details">
+                                    <h3><span class="kidds-zone-colorful">
+                                            <span class="letter-k">K</span><span class="letter-i">I</span><span
+                                                class="letter-d1">D</span><span class="letter-d2">D</span><span
+                                                class="letter-apo">'</span><span class="letter-s">S</span>
+                                            &nbsp;
+                                            <span class="letter-z">Z</span><span class="letter-o">O</span><span
+                                                class="letter-n">N</span><span class="letter-e">E</span>
+                                        </span> Campus</h3>
+                                    <p>Gaush Nagar mani tola doranda</p>
+                                    <p>Ranchi, Jharkhand 834002</p>
+                                </div>
+                            </div>
+                            <div class="map-actions">
+                                <a href="https://www.google.com/maps/dir//KIDD'S+ZONE,+Gaush+Nagar+mani+tola+doranda,+ranchi+834082,+Ranchi,+Jharkhand+834002/@23.3432048,85.3213263,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x39f4e1d4ef559b4b:0x315aae2f2a7edbc!2m2!1d85.327733!2d23.3317795?hl=en-GB&entry=ttu&g_ep=EgoyMDI2MDEyMS4wIKXMDSoKLDEwMDc5MjA2OUgBUAM%3D"
+                                    target="_blank" class="btn btn-secondary">
+                                    <i class="fas fa-directions"></i> Get Directions
+                                </a>
+                            </div>
+                        </div>
+                        <div class="map-note">
+                            <p><i class="fas fa-info-circle"></i> For detailed directions, click the "Get Directions"
+                                button above.</p>
+                        </div>
+                    </div>
+
+                    <div class="visit-info">
+                        <h3>Planning a Visit? 🏫</h3>
+                        <p>We recommend scheduling a visit during our working hours. Please call ahead to confirm
+                            availability.</p>
+                        <a href="tel:+917004706917" class="btn btn-tertiary">
+                            <i class="fas fa-phone"></i> Call to Schedule
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- FAQ Section -->
-    <section class="faq-section bg-light">
+    <section class="contact-faq">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Frequently Asked Questions</h2>
-                <p class="section-subtitle">Quick answers to common queries</p>
-            </div>
-            
+            <h2 class="section-title">Frequently Asked Questions ❓</h2>
             <div class="faq-container">
                 <div class="faq-item">
                     <div class="faq-question">
-                        <h3>What are the admission procedures?</h3>
-                        <i class="fas fa-chevron-down"></i>
+                        <h3>What are your school timings? ⏰</h3>
+                        <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Admission process includes: 1) Visit our institute, 2) Free demo class (optional), 3) Registration with required documents, 4) Fee payment, 5) Commencement of classes.</p>
+                        <p>Our school timings are from 8:30 AM to 1:30 PM for Pre-Nursery to Kindergarten, and 8:30 AM
+                            to 2:30 PM for Class 1-5.</p>
                     </div>
                 </div>
-                
                 <div class="faq-item">
                     <div class="faq-question">
-                        <h3>What documents are required for admission?</h3>
-                        <i class="fas fa-chevron-down"></i>
+                        <h3>Do you provide transportation? 🚌</h3>
+                        <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Required documents: 1) Previous year mark sheet, 2) School/College ID proof, 3) 2 passport size photographs, 4) Address proof, 5) Transfer certificate (if applicable).</p>
+                        <p>Yes, we provide safe and GPS-enabled school buses with trained attendants for all routes
+                            across the city.</p>
                     </div>
                 </div>
-                
                 <div class="faq-item">
                     <div class="faq-question">
-                        <h3>Can I attend a demo class before admission?</h3>
-                        <i class="fas fa-chevron-down"></i>
+                        <h3>What is the teacher-student ratio? 👩‍🏫</h3>
+                        <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Yes, we offer free demo classes for prospective students. You can attend one regular class to experience our teaching methodology before making a decision.</p>
+                        <p>We maintain a healthy teacher-student ratio of 1:12 for Pre-Nursery to Kindergarten and 1:20
+                            for Class 1-5.</p>
                     </div>
                 </div>
-                
                 <div class="faq-item">
                     <div class="faq-question">
-                        <h3>What is the batch size?</h3>
-                        <i class="fas fa-chevron-down"></i>
+                        <h3>Do you offer extracurricular activities? 🎨</h3>
+                        <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>We maintain small batch sizes of 20-25 students to ensure personalized attention and effective learning.</p>
+                        <p>Yes, we offer a wide range of extracurricular activities including art, music, dance, sports,
+                            yoga, and more.</p>
                     </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>Do you provide study material?</h3>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Yes, comprehensive study material including printed notes, practice papers, and question banks are provided to all enrolled students at no extra cost.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <div class="cta-content">
-                <h2 class="cta-title">Ready to Start Your Journey with Us?</h2>
-                <p class="cta-text">Contact us today for admissions or any queries. Our team is ready to assist you.</p>
-                <div class="cta-buttons">
-                    <a href="tel:6206787009" class="btn btn-primary"><i class="fas fa-phone"></i> Call Now: 6206787009</a>
-                    <a href="https://wa.me/916206787009" class="btn btn-secondary" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
                 </div>
             </div>
         </div>
@@ -313,68 +357,48 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-logo">
-                        <h2><span class="logo-primar">COMMERCE</span> <span class="logo-secondary">FUTURE POINT</span></h2>
-                        <p class="tagline">Education is the most powerful tool to change the life</p>
-                    </div>
-                    <p class="footer-about">Since 1999, we have been shaping futures and building careers through quality education and expert guidance.</p>
+                <div class="footer-logo">
+                    <h2>🎨 <span class="kidds-zone-colorful">
+                            <span class="letter-k">K</span><span class="letter-i">I</span><span
+                                class="letter-d1">D</span><span class="letter-d2">D</span><span
+                                class="letter-apo">'</span><span class="letter-s">S</span>
+                            &nbsp;
+                            <span class="letter-z">Z</span><span class="letter-o">O</span><span
+                                class="letter-n">N</span><span class="letter-e">E</span>
+                        </span></h2>
+                    <p>A Unit of Complete Study</p>
+                    <p>Pre-Nursery to Class 5</p>
                 </div>
-                
-                <div class="footer-section">
-                    <h3 class="footer-title">Quick Links</h3>
-                    <ul class="footer-links">
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About Us</a></li>
-                        <li><a href="subjects.html">Subjects</a></li>
-                        <li><a href="fees.html">Fee Structure</a></li>
+                        <li><a href="admission.html">Admission</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
-                
-                <div class="footer-section">
-                    <h3 class="footer-title">Contact Info</h3>
-                    <ul class="footer-contact">
-                        <li><i class="fas fa-map-marker-alt"></i> OPP: Aloo Godam, Imli Chowk, Harmu, Ranchi</li>
-                        <li><i class="fas fa-phone"></i> 6206787009</li>
-                        <li><i class="fas fa-envelope"></i> info@commercefuturepoint.com</li>
-                        <li><i class="fas fa-clock"></i> Mon-Sat: 8:00 AM - 8:00 PM</li>
-                    </ul>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i>Gaush Nagar mani tola doranda, Ranchi, Jharkhand 834002</p>
+                    <p><i class="fas fa-phone"></i> +91 70047 06917</p>
+                    <p><i class="fas fa-envelope"></i> info@kiddszone.edu</p>
                 </div>
             </div>
-            
             <div class="footer-bottom">
-                <p>&copy; 2024 Commerce Future Point. All Rights Reserved. | Since 1999</p><br>
-                    Developed with ❤️ by <a href="https://ali62037.github.io/qalamwebtechnology/" target="_blank">Qalamweb Technology</a>
-                <div class="social-links">
-                    <a href="https://www.facebook.com/profile.php?id=100066726870885&locale=ta_IN#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                </div>
+                <p>&copy; 2026 <span class="kidds-zone-colorful">
+                        <span class="letter-k">K</span><span class="letter-i">I</span><span
+                            class="letter-d1">D</span><span class="letter-d2">D</span><span
+                            class="letter-apo">'</span><span class="letter-s">S</span>
+                        &nbsp;
+                        <span class="letter-z">Z</span><span class="letter-o">O</span><span
+                            class="letter-n">N</span><span class="letter-e">E</span>
+                    </span> - A Unit of Complete Study. All rights reserved. 🧸</p>
             </div>
         </div>
     </footer>
 
-    <!-- Floating Contact Buttons -->
-    <div class="floating-buttons">
-        <div class="floating-toggle" id="floatingToggle">
-            <i class="fas fa-comments"></i>
-        </div>
-        <div class="floating-buttons-container">
-            <a href="https://wa.me/916206787009" class="floating-button whatsapp" target="_blank">
-                <i class="fab fa-whatsapp"></i>
-                <span>WhatsApp</span>
-            </a>
-            <a href="tel:6206787009" class="floating-button call">
-                <i class="fas fa-phone"></i>
-                <span>Call Now</span>
-            </a>
-        </div>
-    </div>
-
     <script src="script.js"></script>
 </body>
+
 </html>
-
-
